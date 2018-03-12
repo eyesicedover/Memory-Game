@@ -1,5 +1,13 @@
-// export function Game() {
+// function Game() {
+//   this.counter = 0;
+// }
+
+// Game.prototype.checker = function(card1, card2) {
+//   if (card1 == card2) {
+//     this.counter++;
+//   } else if (counter == 3) {
 //
+//   } else
 // }
 
 export function shuffle() {
