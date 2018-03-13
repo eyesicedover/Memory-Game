@@ -1,42 +1,38 @@
-import { shuffle } from './game.js';
+import { Game } from './game.js';
 import './styles.css';
 
 $(document).ready(function() {
-  var board = [];
   var counter = 0;
-  var card1 = "nothing";
-  var card2 = "nothing";
+  var newGame;
+  var link1 = "http://www.freepngimg.com/thumb/elephant/31379-4-elephant-transparent-background-thumb.png";
+  var link2 = "http://clipground.com/images/australian-birds-clipart-8.jpg";
+  var link3 = "http://pluspng.com/img-png/dog-png-dog-png-image-png-image-200.png";
 
   $('#start').click(function() {
     $('.game').show();
     $('.intro').hide();
-    board = shuffle();
-    $("#spot1").addClass(board[0]);
-    $("#spot2").addClass(board[1]);
-    $("#spot3").addClass(board[2]);
-    $("#spot4").addClass(board[3]);
-    $("#spot5").addClass(board[4]);
-    $("#spot6").addClass(board[5]);
-    // var newGame = new Game();
+    newGame = new Game();
+    newGame.shuffle();
+    newGame.setBoard();
   });
 
   $(".card").unbind().click(function() {
-    var holder = $(this).attr("class");
-    if ((counter == 0) && !holder.includes("show")) {
+    if (counter == 0) {
       counter++;
-      card1 = holder;
-      $(this).show();
-      $(this).addClass("show");
-    } else if (counter == 1 && !holder.includes("show")) {
+      newGame.card1Class = $(this).attr("class");
+      newGame.card1Id = $(this).attr("id");
+      $("#img" + newGame.card1Id).show();
+    } else if ((counter == 1) && (newGame.card1Id != $(this).attr("id"))) {
       counter = 0;
-      card2 = holder;
-      $(this).show();
-      $(this).addClass("show");
-      // newGame.checker(card1, card2);
+      newGame.card2Class = $(this).attr("class");
+      newGame.card2Id = $(this).attr("id");
+      $("#img" + newGame.card2Id).show();
+      newGame.checker();
+      $(".turns").text(newGame.turns);
     }
+  });
 
-    if (card1 == card2) {
-      $('.intro').show();
-    }
+  $("#reload").click(function(){
+    location.reload();
   });
 });

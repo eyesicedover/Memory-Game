@@ -13,43 +13,67 @@
       <div class="well intro">
         <p>Welcome to the memory game</p>
         <p>Click the button to begin</p>
-        <button type="button" name="start" id="start">Begin</button>
+        <button class="btn btn-primary" type="button" name="start" id="start">Begin</button>
       </div>
       <div class="well game">
+        <p>Turns: <span class="turns"></span></p>
         <div class="row">
           <div class="col-sm-4">
-            <div class="well card" id="spot1">
-              <p>CLICK ME</p>
+            <div class="well card" id="1">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img1"></li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="well card" id="spot2">
-              <p>CLICK ME</p>
+            <div class="well card" id="2">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img2"></li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="well card" id="spot3">
-              <p>CLICK ME</p>
+            <div class="well card" id="3">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img3"></li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-4">
-            <div class="well card" id="spot4">
-              <p>CLICK ME</p>
+            <div class="well card" id="4">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img4"></li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="well card" id="spot5">
-              <p>CLICK ME</p>
+            <div class="well card" id="5">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img5"></li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="well card" id="spot6">
-              <p>CLICK ME</p>
+            <div class="well card" id="6">
+              <ul>
+                <li id="text1">CLICK ME</li>
+                <li id="img6"></li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+      <div class="well" id ="win">
+        <h2>Congrats! You WIN!</h2>
+        <p>It took you <span class="turns"></span> turns to win.</p>
+        <button type="button" class="btn btn-primary" id="reload">Play Again?</button>
       </div>
     </div>
   </body>
